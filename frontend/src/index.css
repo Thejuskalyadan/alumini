@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes bulletin-scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.bulletin-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.bulletin-text {
+  display: inline-block;
+  animation: bulletin-scroll 12s linear infinite;  /* smooth */
+}
+
+.bulletin-paused {
+  animation-play-state: paused;
+}
