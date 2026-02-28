@@ -22,7 +22,28 @@ const Announcements = () => {
     >
       {/* ✅ Glass Overlay */}
       <div className="absolute inset-0 bg-white/30 backdrop-blur-sm" />
+      
+      {/* ✅ Header */}
+      <div className="bg-white/30 backdrop-blur-md border border-white/30 rounded-2xl p-6 shadow flex justify-between items-center">
+        <div>
+          <h1 className="text-2xl font-bold text-black">
+            Welcome back, {user?.name || "Alumni"} 👋
+          </h1>
+          <p className="text-gray-700 mt-1">
+            Stay connected with your alumni network.
+          </p>
+        </div>
 
+        <button
+          onClick={() => {
+            localStorage.clear();
+            window.location.href = "/login";
+          }}
+          className="bg-red-500/70 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition"
+        >
+          Logout
+        </button>
+      </div>
       <div className="flex-1 p-8 relative space-y-6">
         {/* ✅ BULLETIN BOX */}
         {bulletins.length > 0 && (

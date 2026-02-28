@@ -13,7 +13,7 @@ function App() {
         {/* ✅ Default Route */}
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Announcements />} />
 
         <Route path="/register" element={<Register />} />
         <Route path="/admin" element={<AdminDashboard />} />
