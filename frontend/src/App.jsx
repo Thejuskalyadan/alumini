@@ -6,6 +6,7 @@ import AdminDashboard from "./components/admin/AdminDashboard";
 import UsersManagement from "./components/admin/UsersManagement";
 import AdminAnnouncements from "./components/admin/AdminAnnouncements";
 import Announcements from "./components/Announcements";
+import Directory from "./components/Directory";
 function App() {
   return (
     <Router>
@@ -14,12 +15,12 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Announcements />} />
-
         <Route path="/register" element={<Register />} />
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/users" element={<UsersManagement />} />
         <Route path="/admin/announcements" element={<AdminAnnouncements />} />
-        <Route path="/announcements" element={<Announcements />} />
+        <Route path="/directory" element={<Directory />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
   );

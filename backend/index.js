@@ -12,11 +12,12 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
-app.use("/api/auth", authRoutes);
-app.use("/auth", authRoutes);
-app.use("/", authRoutes);
+
+
+
 app.use("/api/announcements", announcementRoutes);
 app.use("/uploads", express.static("uploads"));
+app.use("/api/auth", authRoutes);
 
 app.get("/", (req, res) => {
   res.send("API Running 🚀");

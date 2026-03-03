@@ -53,15 +53,16 @@ router.post("/login", async (req, res) => {
       { expiresIn: "7d" }
     );
 
-   res.json({
-     message: "Login successful",
-     user: {
-       id: user._id,
-       email: user.email,
-       role: user.role, 
-     },
-     token,
-   });
+  res.json({
+    message: "Login successful",
+    user: {
+      id: user._id,
+      name: user.name,
+      email: user.email,
+      role: user.role,
+    },
+    token,
+  });
 
   } catch (err) {
     res.status(500).json({ message: "Server Error" });
@@ -137,5 +138,16 @@ router.delete("/:id", async (req, res) => {
     res.status(500).json({ message: "Server Error" });
   }
 });
+router.get("/directory", async (req, res) => {
+  try {
+    const users = await User.find({
+      role: "user",
+      status: "approved",
+    }).select("name email department graduationYear profileImage");
 
+    res.json(users);
+  } catch (err) {
+    res.status(500).json({ message: "Server Error" });
+  }
+});
 export default router;
