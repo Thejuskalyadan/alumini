@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import Dashboard from "./components/Dashboard";
+
 import AdminDashboard from "./components/admin/AdminDashboard";
 import UsersManagement from "./components/admin/UsersManagement";
 import AdminAnnouncements from "./components/admin/AdminAnnouncements";
@@ -20,7 +20,8 @@ function App() {
         <Route path="/users" element={<UsersManagement />} />
         <Route path="/admin/announcements" element={<AdminAnnouncements />} />
         <Route path="/directory" element={<Directory />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        
+        
       </Routes>
     </Router>
   );
