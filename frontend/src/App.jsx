@@ -1,30 +1,27 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
-
-import AdminDashboard from "./components/admin/AdminDashboard";
-import UsersManagement from "./components/admin/UsersManagement";
-import AdminAnnouncements from "./components/admin/AdminAnnouncements";
 import Announcements from "./components/Announcements";
+import Profile from "./components/Profile";
 import Directory from "./components/Directory";
+import Navbar from "./components/Navbar";
 function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
-        {/* ✅ Default Route */}
-        <Route path="/" element={<Login />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Announcements />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/admin" element={<AdminDashboard />} />
-        <Route path="/users" element={<UsersManagement />} />
-        <Route path="/admin/announcements" element={<AdminAnnouncements />} />
-        <Route path="/directory" element={<Directory />} />
-        
-        
-      </Routes>
+  {/* The path MUST be lowercase and match your Navbar Links */}
+  <Route path="/login" element={<Login />} />
+  <Route path="/register" element={<Register />} />
+  <Route path="/directory" element={<Directory />} />
+  <Route path="/announcements" element={<Announcements />} />
+  <Route path="/profile" element={<Profile />} />
+  {/* Fallback for when no route matches */}
+  <Route path="*" element={<div className="p-10">Page Not Found - Check your URL</div>} />
+</Routes>
     </Router>
   );
 }
 
 export default App;
+

@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 
 const Announcements = () => {
   
-  const navigate = useNavigate();  
+  
 
   const [announcements, setAnnouncements] = useState([]);
   const [isPaused, setIsPaused] = useState(false);
   const [selectedPoster, setSelectedPoster] = useState(null);
-  const user = JSON.parse(localStorage.getItem("user") || "null");
+ 
 
   useEffect(() => {
     fetch("http://localhost:5000/api/announcements")
@@ -30,46 +30,7 @@ const Announcements = () => {
 
      {/* Main Content Wrapper */}
      <div className="relative z-10 w-full px-10 py-6 space-y-6">
-       {/* Header */}
-       <div className="flex items-center justify-between bg-white/70 backdrop-blur-md border border-white/30 rounded-2xl px-6 py-4 shadow-lg">
-         {/* Left: Profile */}
-         <div className="flex items-center gap-4">
-           <img
-             src={
-               user?.profileImage
-                 ? `http://localhost:5000/uploads/${user.profileImage}`
-                 : "https://ui-avatars.com/api/?name=" +
-                   (user?.name || "Alumni")
-             }
-             alt="Profile"
-             className="w-12 h-12 rounded-full object-cover border border-white/40 shadow"
-           />
-
-           <h1 className="text-lg font-semibold text-gray-800">
-             {user?.name || "Alumni"}
-           </h1>
-         </div>
-
-         {/* Right: Navigation */}
-         <div className="flex items-center gap-4">
-           <button
-             onClick={() => navigate("/directory")}
-             className="text-sm bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 transition"
-           >
-             Directory
-           </button>
-
-           <button
-             onClick={() => {
-               localStorage.clear();
-               navigate("/login");
-             }}
-             className="text-sm bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition"
-           >
-             Logout
-           </button>
-         </div>
-       </div>
+       
 
        {/* Bulletin */}
        {bulletins.length > 0 && (
@@ -173,7 +134,7 @@ const Announcements = () => {
        )}
      </div>
    </div>
- );
+ )
 };
 
 export default Announcements;
