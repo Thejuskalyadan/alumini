@@ -110,6 +110,22 @@ const Directory = () => {
                     </p>
                   </div>
                 </div>
+               <div className="text-sm text-gray-600 mb-2">
+                organisation: {person.organisation || "N/A"}
+                </div>
+                <div className="text-sm text-gray-600 mb-2">
+                jobTitle: {person.jobTitle || "N/A"}
+                </div>
+                <div className="text-sm text-gray-600 mb-2">
+                industry: {person.industry || "N/A"}
+                </div>
+                <div className="text-sm text-gray-600 mb-2">
+                skills: {person.skills || "N/A"}
+                </div>
+                
+                <div className="text-sm text-gray-600 mb-2">
+                location: {person.location || "N/A"}
+                </div>
 
                 <div className="text-sm text-gray-500 space-y-1">
                   <p><span className="font-medium">Batch:</span> {person.graduationYear || "N/A"}</p>
@@ -121,6 +137,34 @@ const Directory = () => {
                 >
                   Send Message
                 </button>
+                
+                <div className="mt-4 flex gap-3">
+                <button align="center" padding="10px"
+                 onclick={() => window.open(person.github, "_blank")}
+                  className="flex-1 bg-gray-600 text-white py-2.5 px-4 rounded-xl font-medium hover:bg-blue-700 transition-all active:scale-95"
+                  >
+                    Github
+
+                </button>
+                   <button  padding="10px" align="center"
+                  onclick={() => window.open(person.linkedin, "_blank")}
+                  className="flex-1 bg-gray-600 text-white py-2.5 px-4 rounded-xl font-medium hover:bg-blue-700 transition-all active:scale-95"
+                >
+                  LinkedIn
+                   </button>
+                
+                  <button  padding="10px" align="center"
+                    onClick={() => window.open(person.personalWebsite, "_blank")}
+                    className="flex-1 bg-gray-600 text-white py-2.5 px-4 rounded-xl font-medium hover:bg-blue-700 transition-all active:scale-95"
+                  >
+                   Personal Website
+                  </button>
+                
+
+                  
+                  
+                </div>
+
               </div>
             ))}
           </div>

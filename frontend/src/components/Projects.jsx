@@ -35,8 +35,9 @@ const Projects = () => {
                 </div>
             )}
         </div>
+       
         </div>
     );
-};
-
+}
 export default Projects;
+  
